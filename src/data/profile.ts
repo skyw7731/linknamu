@@ -14,18 +14,16 @@ export type Profile = {
   avatar: string;
 };
 
-// TODO: 실제 프로필로 교체하세요. (현재는 보여주기용 더미 값)
 export const profile: Profile = {
-  name: "김기범",
-  bio: "세계최강바이브코더",
-  avatar: "/profile.svg",
+  name: "김개발",
+  bio: "풀스택 개발자 ; 요즘에는 AI 개발에 관심이 많아요",
+  avatar: "/profile.jpg",
 };
 
 export const links: LinkItem[] = [
-  // TODO: 실제 주소로 교체하세요. (현재는 보여주기용 더미 값)
-  { id: "github", title: "GitHub", url: "https://github.com" },
-  { id: "linkedin", title: "LinkedIn", url: "https://www.linkedin.com" },
-  { id: "blog", title: "Blog", url: "https://velog.io" },
+  { id: "github", title: "💻 깃허브", url: "https://github.com/skyw7731" },
+  { id: "blog", title: "📝 블로그", url: "https://blog.naver.com/skyw7731" },
+  { id: "email", title: "📬 이메일", url: "mailto:skyw7732@gmail.com" },
 ];
 
 export function isKnownLinkId(id: unknown): id is string {

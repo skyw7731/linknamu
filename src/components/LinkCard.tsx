@@ -17,13 +17,15 @@ function recordClick(id: string) {
 }
 
 export default function LinkCard({ link }: { link: LinkItem }) {
+  // mailto: 링크는 새 탭으로 열면 빈 탭이 남으므로 현재 탭에서 메일 앱을 엽니다.
+  const isWebLink = /^https?:\/\//.test(link.url);
   return (
     <a
       href={link.url}
-      target="_blank"
-      rel="noopener noreferrer"
+      target={isWebLink ? "_blank" : undefined}
+      rel={isWebLink ? "noopener noreferrer" : undefined}
       onClick={() => recordClick(link.id)}
-      className="block w-full rounded-2xl border border-zinc-200 bg-white px-5 py-4 text-center font-medium shadow-sm transition hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600 dark:border-zinc-700 dark:bg-zinc-900"
+      className="liquid-glass block w-full rounded-full px-6 py-[18px] text-center text-[15px] font-semibold focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring-accent"
     >
       {link.title}
     </a>

@@ -4,16 +4,17 @@ import type { Profile } from "@/data/profile";
 export default function ProfileHeader({ profile }: { profile: Profile }) {
   return (
     <header className="flex flex-col items-center text-center">
+      {/* 테두리 없이 겹친 그림자만으로 사진이 떠 있는 느낌 */}
       <Image
         src={profile.avatar}
         alt={`${profile.name} 프로필 사진`}
-        width={160}
-        height={160}
+        width={128}
+        height={128}
         priority
-        className="size-36 rounded-full object-cover ring-4 ring-white shadow-md sm:size-40 dark:ring-zinc-800"
+        className="size-28 rounded-full object-cover shadow-avatar sm:size-32"
       />
-      <h1 className="mt-5 text-xl font-bold sm:text-2xl">{profile.name}</h1>
-      <p className="mt-1 text-sm text-zinc-600 sm:text-base dark:text-zinc-400">{profile.bio}</p>
+      <h1 className="mt-6 text-2xl font-bold tracking-tight">{profile.name}</h1>
+      <p className="mt-2 max-w-xs text-[15px] leading-relaxed text-muted">{profile.bio}</p>
     </header>
   );
 }
